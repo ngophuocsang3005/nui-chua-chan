@@ -381,26 +381,31 @@ footer span {
 @media (max-width: 600px) {
 
     .logos {
+    position: fixed;
 
-        top: 18px;
+    top: 20px;
+    left: 50vw;
 
-        left: 18px;
+    transform: translateX(-50%);
 
-        gap: 10px;
-    }
+    width: auto;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    .logo {
+    gap: 12px;
 
-        width: 42px;
+    z-index: 100;
+}
 
-        height: 42px;
+.logo {
+    width: 42px;
+    height: 42px;
 
-        max-width: 42px;
-
-        max-height: 42px;
-    }
-
+    object-fit: contain;
+    flex: 0 0 42px;
+}
 
     .hero-content {
 
