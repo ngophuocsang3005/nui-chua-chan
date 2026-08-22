@@ -381,31 +381,33 @@ footer span {
 @media (max-width: 600px) {
 
     .logos {
-    position: fixed;
+        position: absolute;
 
-    top: 20px;
-    left: 50vw;
+        top: 18px;
+        left: 50%;
 
-    transform: translateX(-50%);
+        transform: translateX(-50%);
 
-    width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        gap: 10px;
 
-    gap: 12px;
+        width: max-content;
+    }
 
-    z-index: 100;
+    .logo {
+        width: 42px;
+        height: 42px;
+
+        max-width: 42px;
+        max-height: 42px;
+
+        object-fit: contain;
+    }
 }
 
-.logo {
-    width: 42px;
-    height: 42px;
-
-    object-fit: contain;
-    flex: 0 0 42px;
-}
 
     .hero-content {
 
