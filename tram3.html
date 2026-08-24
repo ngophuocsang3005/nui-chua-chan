@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trạm 3 – Núi và hệ sinh thái</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f5f0;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        .label {
+            color: #4a7c59;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            min-height: 75vh;
+            background: linear-gradient(rgba(20, 35, 25, 0.5), rgba(20, 35, 25, 0.75)),
+                        url("images/anh1.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero .station {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            color: #c2eabd;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #e0e0e0;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* ================= SECTION GENERAL ================= */
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            line-height: 1.25;
+            margin-bottom: 20px;
+            color: #1a3021;
+        }
+
+        /* ================= SECTIONS LAYOUT ================= */
+        
+        /* ĐOẠN 1: Giới thiệu & Rừng */
+        .section-one {
+            background: #ffffff;
+        }
+
+        .section-one-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .section-one .text-block p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .section-one .image-block img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        /* ĐOẠN 2: Vai trò & Thách thức */
+        .section-two {
+            background: #f4f5f0;
+        }
+
+        .section-two-header {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 50px auto;
+        }
+
+        .section-two-header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .media-grid-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .media-grid-two img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .benefit-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 8px;
+            border-top: 4px solid #4a7c59;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ĐOẠN 3: Hành động chung tay */
+        .section-three {
+            background: #1e3323;
+            color: #ffffff;
+        }
+
+        .section-three .label {
+            color: #a3d9a5;
+        }
+
+        .section-three .section-title {
+            color: #ffffff;
+        }
+
+        .section-three-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .section-three .image-block img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .action-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 25px;
+        }
+
+        .action-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .action-item h4 {
+            font-size: 16px;
+            color: #c2eabd;
+            margin-bottom: 6px;
+        }
+
+        .action-item p {
+            font-size: 13px;
+            color: #d0d7d1;
+        }
+
+        .quote-msg {
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #a3d9a5;
+            font-style: italic;
+        }
+
+        /* ================= QUIZ ================= */
+        .quiz {
+            background: #111111;
+            color: white;
+            padding: 80px 0;
+        }
+
+        .quiz-box {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .quiz .label {
+            color: #aebda9;
+        }
+
+        .quiz h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .quiz-intro {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            padding: 30px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .question h3 {
+            font-size: 19px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .option {
+            display: block;
+            padding: 14px 18px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background: #2a2a2a;
+            border-color: #666;
+        }
+
+        .option input {
+            margin-right: 12px;
+        }
+
+        .quiz-button {
+            margin-top: 20px;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 25px;
+            background: #ffffff;
+            color: #111;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .quiz-button:hover {
+            background: #e0e0e0;
+        }
+
+        .result {
+            margin-top: 18px;
+            font-weight: bold;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: #080808;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        footer p {
+            color: #777;
+            margin-top: 6px;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 12px 28px;
+            border-radius: 25px;
+            background: #ffffff;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 850px) {
+            .section-one-grid,
+            .section-three-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .benefit-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .media-grid-two {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .benefit-cards,
+            .action-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= BANNER HEAD (Anh 1 - anh1.jpg) ================= -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="station">TRẠM 03 · NÚI VÀ HỆ SINH THÁI</div>
+            <h1>Chung tay bảo vệ màu xanh</h1>
+            <p>Hệ sinh thái Núi Chứa Chan – nơi thiên nhiên tạo nên sự sống và con người cùng chung tay gìn giữ.</p>
+        </div>
+    </section>
+
+
+    <!-- ================= ĐOẠN 1: TỔNG QUAN & RỪNG (Anh 2 - anh2.jpg) ================= -->
+    <section class="section section-one">
+        <div class="container">
+            <div class="section-one-grid">
+                <div class="text-block">
+                    <div class="label">HỆ SINH THÁI NÚI CHỨA CHAN</div>
+                    <h2 class="section-title">Một hệ sinh thái tự nhiên đa dạng & Nơi sự sống cùng tồn tại</h2>
+                    <p>Núi Chứa Chan không chỉ nổi bật bởi vẻ đẹp hùng vĩ mà còn là nơi sở hữu hệ sinh thái tự nhiên đa dạng với nhiều loại cây xanh, thảm thực vật và các loài sinh vật.</p>
+                    <p>Những khu rừng tại đây đóng vai trò nòng cốt giúp điều hòa khí hậu, giữ đất, bảo vệ nguồn nước ngọt quý giá và tạo môi trường sống an toàn cho phong phú các loài động, thực vật sinh sôi.</p>
+                </div>
+                <div class="image-block">
+                    <img src="images/anh2.jpg" alt="Cảnh quan và Rừng Núi Chứa Chan">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= ĐOẠN 2: THIÊN NHIÊN & VAI TRÒ & THỬ THÁCH (Anh 3 & 4) ================= -->
+    <section class="section section-two">
+        <div class="container">
+            <div class="section-two-header">
+                <div class="label">VAI TRÒ & THỬ THÁCH</div>
+                <h2 class="section-title">Cây xanh · Thảm thực vật · Môi trường cần bảo vệ</h2>
+                <p>Tất cả cùng tạo nên một hệ sinh thái tự nhiên đa dạng. Tuy nhiên, rác thải, việc khai thác tài nguyên và các hoạt động du lịch thiếu ý thức đang là thử thách lớn có thể làm ảnh hưởng đến cảnh quan và hệ sinh thái nơi đây.</p>
+            </div>
+
+            <div class="media-grid-two">
+                <img src="images/anh3.jpg" alt="Hệ sinh thái Núi Chứa Chan">
+                <img src="images/anh4.jpg" alt="Bảo vệ thiên nhiên và thử thách">
+            </div>
+
+            <div class="benefit-cards">
+                <div class="card">
+                    <h3>Điều hòa khí hậu</h3>
+                    <p>Những khu rừng góp phần cân bằng nhiệt độ và điều hòa không khí khu vực.</p>
+                </div>
+                <div class="card">
+                    <h3>Giữ đất chống xói mòn</h3>
+                    <p>Thảm thực vật dày đặc góp phần giữ đất và bảo vệ cấu trúc cảnh quan núi.</p>
+                </div>
+                <div class="card">
+                    <h3>Bảo vệ nguồn nước</h3>
+                    <p>Rừng như một tấm lọc tự nhiên giúp duy trì và bảo vệ nguồn nước ngầm.</p>
+                </div>
+                <div class="card">
+                    <h3>Môi trường sống</h3>
+                    <p>Cung cấp nơi trú ẩn, sinh sản và phát triển cho nhiều loài động, thực vật.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= ĐOẠN 3: HÀNH ĐỘNG CHUNG TAY (Anh 4 - anh4.jpg) ================= -->
+    <section class="section section-three">
+        <div class="container">
+            <div class="section-three-grid">
+                <div class="text-block">
+                    <div class="label">CHUNG TAY BẢO VỆ</div>
+                    <h2 class="section-title">Những hành động nhỏ cho tương lai xanh</h2>
+                    <p>Mỗi chúng ta hãy cùng chung tay bảo vệ Núi Chứa Chan bằng những hành động thiết thực và đơn giản nhất trong mỗi chuyến đi.</p>
+
+                    <div class="action-list">
+                        <div class="action-item">
+                            <h4>Không xả rác</h4>
+                            <p>Giữ gìn cảnh quan và môi trường tự nhiên sạch đẹp.</p>
+                        </div>
+                        <div class="action-item">
+                            <h4>Hạn chế đồ nhựa</h4>
+                            <p>Giảm thiểu tối đa việc sử dụng nhựa dùng một lần.</p>
+                        </div>
+                        <div class="action-item">
+                            <h4>Tôn trọng cây xanh</h4>
+                            <p>Không bẻ cành, hái hoa, giữ nguyên vẻ đẹp tự nhiên.</p>
+                        </div>
+                        <div class="action-item">
+                            <h4>Bảo vệ sinh thái</h4>
+                            <p>Cùng chung tay gìn giữ hệ sinh thái Núi Chứa Chan.</p>
+                        </div>
+                    </div>
+
+                    <div class="quote-msg">
+                        "Giữ màu xanh hôm nay là gìn giữ sự sống cho ngày mai."
+                    </div>
+                </div>
+
+                <div class="image-block">
+                    <img src="images/anh4.jpg" alt="Hành động bảo vệ môi trường">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= TRẮC NGHIỆM ================= -->
+    <section class="quiz">
+        <div class="container">
+            <div class="quiz-box">
+                <div class="label">TƯƠNG TÁC</div>
+                <h2>Bạn nhớ được gì?</h2>
+                <p class="quiz-intro">Trả lời một câu hỏi nhỏ trước khi tiếp tục hành trình.</p>
+
+                <div class="question">
+                    <h3>Vai trò quan trọng của hệ thực vật tại Núi Chứa Chan đối với môi trường là gì?</h3>
+
+                    <label class="option">
+                        <input type="radio" name="answer" value="A">
+                        A. Làm tăng lượng rác thải trong khu vực
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="answer" value="B">
+                        B. Giúp giữ đất, bảo vệ nguồn nước và tạo môi trường sống cho sinh vật
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="answer" value="C">
+                        C. Làm giảm sự đa dạng sinh học
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="answer" value="D">
+                        D. Ngăn cản các loài động vật sinh sống
+                    </label>
+
+                    <button class="quiz-button" onclick="checkAnswer()">Kiểm tra đáp án →</button>
+
+                    <div class="result" id="result"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <h3>CHẠM VÀO NÚI CHỨA CHAN</h3>
+        <p>Trạm 3 · Núi và hệ sinh thái</p>
+        <a href="index.html" class="home-button">← Quay về trang chủ</a>
+    </footer>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.querySelector('input[name="answer"]:checked');
+            const result = document.getElementById("result");
+
+            if (!answer) {
+                result.textContent = "Hãy chọn một đáp án trước nhé!";
+                result.style.color = "#f5c26b";
+                return;
+            }
+
+            if (answer.value === "B") {
+                result.textContent = "✓ Chính xác! Hệ thực vật giúp giữ đất, bảo vệ nguồn nước và duy trì môi trường sống cho sinh vật.";
+                result.style.color = "#9ed39e";
+            } else {
+                result.textContent = "Chưa đúng! Hãy đọc lại thông tin ở các đoạn trên nhé.";
+                result.style.color = "#ff9c9c";
+            }
+        }
+    </script>
+
+</body>
+</html>
