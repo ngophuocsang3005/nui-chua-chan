@@ -55,6 +55,21 @@
             max-width: 800px;
         }
 
+        /* LOGO HEADER */
+        .logo-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .logo-header img {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+        }
+
         .hero .station {
             font-size: 14px;
             font-weight: 700;
@@ -371,15 +386,25 @@
             .hero h1 {
                 font-size: 34px;
             }
+
+            .logo-header img {
+                height: 50px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ================= BANNER HEAD (Anh 1 - anh1.jpg) ================= -->
+    <!-- ================= BANNER HEAD ================= -->
     <section class="hero">
         <div class="hero-content">
+            <!-- HAI LOGO TRÊN ĐẦU -->
+            <div class="logo-header">
+                <img src="logod.png" alt="Logo Đoàn">
+                <img src="logot.png" alt="Logo Trường">
+            </div>
+
             <div class="station">TRẠM 03 · NÚI VÀ HỆ SINH THÁI</div>
             <h1>Chung tay bảo vệ màu xanh</h1>
             <p>Hệ sinh thái Núi Chứa Chan – nơi thiên nhiên tạo nên sự sống và con người cùng chung tay gìn giữ.</p>
@@ -387,7 +412,7 @@
     </section>
 
 
-    <!-- ================= ĐOẠN 1: TỔNG QUAN & RỪNG (Anh 2 - anh2.jpg) ================= -->
+    <!-- ================= ĐOẠN 1: TỔNG QUAN & RỪNG ================= -->
     <section class="section section-one">
         <div class="container">
             <div class="section-one-grid">
@@ -405,7 +430,7 @@
     </section>
 
 
-    <!-- ================= ĐOẠN 2: THIÊN NHIÊN & VAI TRÒ & THỬ THÁCH (Anh 3 & 4) ================= -->
+    <!-- ================= ĐOẠN 2: THIÊN NHIÊN & VAI TRÒ & THỬ THÁCH ================= -->
     <section class="section section-two">
         <div class="container">
             <div class="section-two-header">
@@ -441,7 +466,7 @@
     </section>
 
 
-    <!-- ================= ĐOẠN 3: HÀNH ĐỘNG CHUNG TAY (Anh 4 - anh4.jpg) ================= -->
+    <!-- ================= ĐOẠN 3: HÀNH ĐỘNG CHUNG TAY ================= -->
     <section class="section section-three">
         <div class="container">
             <div class="section-three-grid">
@@ -475,7 +500,7 @@
                 </div>
 
                 <div class="image-block">
-                    <img src="images/anh4.jpg" alt="Hành động bảo vệ môi trường">
+                    <img src="anh4.jpg" alt="Hành động bảo vệ môi trường">
                 </div>
             </div>
         </div>
