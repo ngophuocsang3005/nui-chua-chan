@@ -309,14 +309,22 @@
             margin-right: 12px;
         }
 
-        .quiz-button {
+        /* KHU VỰC CHỨA CÁC NÚT TƯƠNG TÁC */
+        .quiz-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             margin-top: 20px;
-            padding: 12px 28px;
+            flex-wrap: wrap;
+        }
+
+        .quiz-button {
+            padding: 12px 24px;
             border: none;
             border-radius: 25px;
             background: #ffffff;
             color: #111;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
             cursor: pointer;
             transition: 0.2s;
@@ -324,6 +332,26 @@
 
         .quiz-button:hover {
             background: #e0e0e0;
+        }
+
+        .feedback-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border: 1px solid #4a7c59;
+            border-radius: 25px;
+            background: rgba(74, 124, 89, 0.2);
+            color: #a3d9a5;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .feedback-button:hover {
+            background: #4a7c59;
+            color: #ffffff;
         }
 
         .result {
@@ -390,6 +418,16 @@
             .logo-header img {
                 height: 50px;
             }
+
+            .quiz-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .quiz-button, .feedback-button {
+                text-align: center;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -399,7 +437,6 @@
     <!-- ================= BANNER HEAD ================= -->
     <section class="hero">
         <div class="hero-content">
-            <!-- HAI LOGO TRÊN ĐẦU -->
             <div class="logo-header">
                 <img src="logod.png" alt="Logo Đoàn">
                 <img src="logot.png" alt="Logo Trường">
@@ -538,7 +575,10 @@
                         D. Ngăn cản các loài động vật sinh sống
                     </label>
 
-                    <button class="quiz-button" onclick="checkAnswer()">Kiểm tra đáp án →</button>
+                    <div class="quiz-actions">
+                        <button class="quiz-button" onclick="checkAnswer()">Kiểm tra đáp án →</button>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScd8VjE2OU99vf2NCBiawEpCctbkpfTIErd_SuWBt6A48szmw/viewform?usp=publish-editor" target="_blank" class="feedback-button">📝 Đóng góp ý kiến</a>
+                    </div>
 
                     <div class="result" id="result"></div>
                 </div>
