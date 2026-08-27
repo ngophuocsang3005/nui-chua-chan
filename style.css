@@ -8,55 +8,40 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
     font-family: Arial, sans-serif;
-
     line-height: 1.6;
-
     color: #222;
-
     background: #f7f7f5;
+    max-width: 100%;
+    overflow-x: hidden;
 }
-
 
 /* =========================
    HERO
 ========================= */
 
 .hero {
-
     position: relative;
-
     min-height: 100vh;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
     color: white;
-
     background-image:
         linear-gradient(
             rgba(0, 0, 0, 0.45),
             rgba(0, 0, 0, 0.55)
         ),
         url("https://pystravel.vn/_next/image?url=https%3A%2F%2Fbooking.pystravel.vn%2Fuploads%2Fposts%2Falbums%2F18518%2Fb69378c051be47423dc58b700ab4e61a.jpg&w=1920&q=75");
-
     background-size: cover;
-
     background-position: center;
 }
-
 
 /* =========================
    LOGOS
@@ -64,25 +49,19 @@ body {
 
 .logos {
     position: absolute;
-
     top: 20px;
     left: 50%;
-
     transform: translateX(-50%);
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 12px;
-
     width: max-content;
 }
 
 .logo {
     width: 42px;
     height: 42px;
-
     object-fit: contain;
     flex-shrink: 0;
 }
@@ -92,358 +71,117 @@ body {
 ========================= */
 
 .hero-content {
-
     max-width: 850px;
-
     padding: 40px 25px;
 }
 
-
 .subtitle {
-
     font-size: 14px;
-
     letter-spacing: 5px;
-
     margin-bottom: 15px;
 }
 
-
 .hero h1 {
-
-    font-size: clamp(
-        55px,
-        10vw,
-        110px
-    );
-
+    font-size: clamp(55px, 10vw, 110px);
     line-height: 1.05;
-
     margin-bottom: 25px;
 }
 
-
 .description {
-
     max-width: 650px;
-
     margin: 0 auto 35px;
-
     font-size: 20px;
 }
-
 
 /* =========================
    BUTTON
 ========================= */
 
 .button {
-
     display: inline-block;
-
     padding: 14px 30px;
-
     border-radius: 50px;
-
     background: white;
-
     color: #222;
-
     text-decoration: none;
-
     font-weight: bold;
-
     transition: 0.25s;
+    cursor: pointer;
 }
-
 
 .button:hover {
-
     transform: translateY(-4px);
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
-
 
 /* =========================
    GENERAL SECTION
 ========================= */
 
 .section {
-
     max-width: 950px;
-
     margin: auto;
-
     padding: 120px 30px;
 }
 
-
 .section-label {
-
     font-size: 13px;
-
     letter-spacing: 4px;
-
     font-weight: bold;
-
     margin-bottom: 15px;
-
     opacity: 0.6;
 }
 
-
 .section h2 {
-
-    font-size: clamp(
-        35px,
-        5vw,
-        60px
-    );
-
+    font-size: clamp(35px, 5vw, 60px);
     line-height: 1.1;
-
     margin-bottom: 25px;
 }
 
-
 .section-text {
-
     max-width: 700px;
-
     font-size: 19px;
-
     color: #555;
 }
-
 
 /* =========================
    DARK SECTION
 ========================= */
 
 .section-dark {
-
     max-width: none;
-
-    padding-left: max(
-        30px,
-        calc((100% - 950px) / 2)
-    );
-
-    padding-right: max(
-        30px,
-        calc((100% - 950px) / 2)
-    );
-
+    padding-left: max(30px, calc((100% - 950px) / 2));
+    padding-right: max(30px, calc((100% - 950px) / 2));
     background: #202522;
-
     color: white;
 }
 
-
 .section-dark .section-text {
-
     color: #ccc;
 }
-
 
 /* =========================
    VIDEO
 ========================= */
 
 .video-section {
-
     max-width: 1100px;
 }
 
-
 .video-box {
-
     margin-top: 40px;
-
     width: 100%;
-
     height: 500px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border-radius: 20px;
-
     background: #ddd;
-
     color: #777;
-
     font-size: 14px;
-
     letter-spacing: 2px;
 }
 
-
-/* =========================
-   QUIZ
-========================= */
-
-.quiz {
-
-    padding: 120px 30px;
-
-    text-align: center;
-
-    background: #111;
-
-    color: white;
-}
-
-
-.quiz h2 {
-
-    font-size: clamp(
-        35px,
-        5vw,
-        60px
-    );
-
-    margin-bottom: 20px;
-}
-
-
-.quiz p {
-
-    margin-bottom: 35px;
-
-    color: #ccc;
-}
-
-
-.quiz-button {
-
-    display: inline-block;
-
-    padding: 15px 30px;
-
-    border-radius: 50px;
-
-    background: white;
-
-    color: #111;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition: 0.25s;
-}
-
-
-.quiz-button:hover {
-
-    transform: scale(1.05);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    padding: 35px 20px;
-
-    text-align: center;
-
-    background: #080808;
-
-    color: white;
-}
-
-
-footer span {
-
-    display: block;
-
-    margin-top: 5px;
-
-    color: #777;
-
-    font-size: 13px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .logos {
-        position: absolute;
-
-        top: 18px;
-        left: 0;
-        right: 0;
-
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        gap: 12px;
-        transform: translateX(-50%) translateX(3px);
-
-        transform: none;
-    }
-
-    .logo {
-        width: 50px;
-        height: 50px;
-
-        max-width: 50px;
-        max-height: 50px;
-
-        object-fit: contain;
-    }
-
-}
-
-
-    .hero-content {
-
-        padding-top: 100px;
-    }
-
-
-    .subtitle {
-
-        font-size: 11px;
-
-        letter-spacing: 3px;
-    }
-
-
-    .description {
-
-        font-size: 16px;
-    }
-
-
-    .section {
-
-        padding: 80px 25px;
-    }
-
-
-    .video-box {
-
-        height: 280px;
-    }
-
-}
 /* =========================
    INTRO
 ========================= */
@@ -466,24 +204,20 @@ footer span {
     color: #666;
 }
 
-
 /* =========================
    STATIONS
 ========================= */
 
 .stations {
     padding: 80px 30px 120px;
-
     background-image:
         linear-gradient(
             rgba(20, 25, 20, 0.72),
             rgba(20, 25, 20, 0.82)
         ),
         url("https://wallpaperaccess.com/full/4834078.jpg");
-
     background-size: cover;
     background-position: center;
-
     color: white;
 }
 
@@ -502,326 +236,151 @@ footer span {
     color: #aaa;
 }
 
-
 /* 5 Ô TRẠM */
 
 .station-grid {
     max-width: 1100px;
     margin: auto;
-
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 18px;
 }
 
-
 .station {
     position: relative;
-
     min-height: 220px;
-
     padding: 30px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     color: white;
     text-decoration: none;
-
     border: 1px solid rgba(255,255,255,0.15);
-
     border-radius: 18px;
-
     transition: 0.3s;
 }
-
 
 .station:last-child {
     grid-column: 1 / -1;
 }
 
-
 .station:hover {
     background: rgba(255,255,255,0.08);
-
     transform: translateY(-6px);
-
     border-color: rgba(255,255,255,0.4);
 }
 
-
 .station-number {
     font-size: 14px;
-
     letter-spacing: 3px;
-
     color: #aaa;
 }
-
 
 .station h3 {
     font-size: 35px;
 }
 
-
 .station-arrow {
     position: absolute;
-
     right: 30px;
     bottom: 25px;
-
     font-size: 30px;
-
     transition: 0.3s;
 }
-
 
 .station:hover .station-arrow {
     transform: translateX(8px);
 }
 
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .station-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .station:last-child {
-        grid-column: auto;
-    }
-
-    .intro {
-        padding: 80px 25px;
-    }
-
-    .stations {
-        padding: 80px 20px;
-    }
-}
 /* =========================
-   STATION PAGE
+   QUIZ
 ========================= */
 
-.station-hero {
-    min-height: 70vh;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    padding: 30px;
-
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.45),
-            rgba(0,0,0,0.65)
-        ),
-        url("https://www.decathlon.vn/blog/wp-content/uploads/2025/08/nui-chua-chan-gia-lao30.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    color: white;
-}
-
-
-.station-nav a {
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 16px;
-}
-
-
-.station-hero-content {
-    max-width: 900px;
-
-    padding-bottom: 70px;
-}
-
-
-.station-hero-content h1 {
-    font-size: clamp(50px, 8vw, 100px);
-
-    line-height: 0.95;
-
-    margin: 15px 0 25px;
-}
-
-
-.station-hero-content p:last-child {
-    max-width: 600px;
-
-    font-size: 20px;
-
-    color: rgba(255,255,255,0.85);
-}
-
-
-/* INTRO */
-
-.station-intro {
-    max-width: 850px;
-
-    margin: auto;
-
+.quiz {
     padding: 120px 30px;
+    text-align: center;
+    background: #111;
+    color: white;
 }
 
-
-.station-intro h2,
-.station-content h2 {
-    font-size: clamp(40px, 6vw, 70px);
-
-    line-height: 1;
-
-    margin-bottom: 25px;
+.quiz h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    margin-bottom: 20px;
 }
 
-
-.station-intro > p:last-child,
-.station-content p:last-child {
-    font-size: 19px;
-
-    line-height: 1.7;
-
-    color: #666;
+.quiz p {
+    margin-bottom: 35px;
+    color: #ccc;
 }
 
-
-/* IMAGE */
-
-.station-image {
-    padding: 0 30px 120px;
-}
-
-
-.placeholder {
-    min-height: 350px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 20px;
-
-    background: #e8e8e8;
-
-    color: #888;
-
-    font-size: 18px;
-}
-
-
-/* CONTENT */
-
-.station-content {
-    max-width: 1100px;
-
-    margin: auto;
-
-    padding: 40px 30px 120px;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-}
-
-
-/* VIDEO */
-
-.station-video .placeholder {
-    min-height: 300px;
-}
-
-
-/* FOOTER */
-
-.station-footer {
-    padding: 40px 30px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    border-top: 1px solid #ddd;
-}
-
-
-.station-footer a {
-    color: inherit;
-
+.quiz-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: white;
+    color: #111;
     text-decoration: none;
-
-    font-weight: 600;
+    font-weight: bold;
+    transition: 0.25s;
 }
 
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .station-content {
-        grid-template-columns: 1fr;
-    }
-
-    .station-hero {
-        min-height: 75vh;
-    }
-
-    .station-footer {
-        gap: 20px;
-    }
-
+.quiz-button:hover {
+    transform: scale(1.05);
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px 20px;
+    text-align: center;
+    background: #080808;
+    color: white;
+}
+
+footer span {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 13px;
+}
+
 /* =========================
    MOBILE RESPONSIVE
 ========================= */
 
 @media (max-width: 600px) {
-
-    /* HERO */
-
     .hero {
         min-height: 90vh;
         padding: 30px 20px;
     }
 
     .logos {
-        top: 20px;
-        left: 20px;
-        gap: 10px;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 12px;
+        width: max-content;
     }
 
     .logo {
-        width: 42px;
-        height: 42px;
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
     }
 
     .hero-content {
-        padding: 0 5px;
+        padding-top: 80px;
     }
 
     .subtitle {
-        font-size: 12px;
-        letter-spacing: 1.5px;
+        font-size: 11px;
+        letter-spacing: 3px;
     }
 
     .hero h1 {
-        font-size: 52px;
+        font-size: 48px;
         line-height: 0.95;
     }
 
@@ -830,8 +389,18 @@ footer span {
         line-height: 1.5;
     }
 
+    .button {
+        padding: 13px 20px;
+        font-size: 14px;
+    }
 
-    /* INTRO */
+    .section {
+        padding: 80px 25px;
+    }
+
+    .video-box {
+        height: 280px;
+    }
 
     .intro {
         padding: 80px 22px;
@@ -847,9 +416,6 @@ footer span {
         line-height: 1.7;
     }
 
-
-    /* STATIONS */
-
     .stations {
         padding: 70px 20px 90px;
     }
@@ -858,13 +424,14 @@ footer span {
         font-size: 38px;
     }
 
-    .stations-grid {
+    .station-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
 
-
-    /* STATION CARD */
+    .station:last-child {
+        grid-column: auto;
+    }
 
     .station {
         min-height: 150px;
@@ -880,23 +447,7 @@ footer span {
         line-height: 1.2;
     }
 
-
-    /* BUTTON */
-
-    .button {
-        padding: 13px 20px;
-        font-size: 14px;
-    }
-
-
-    /* GENERAL */
-
     section {
         overflow: hidden;
     }
-}
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
 }
