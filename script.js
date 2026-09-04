@@ -64,30 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // 5. NÚT CHUYỂN CHẾ ĐỘ SÁNG / TỐI (DARK / LIGHT MODE TOGGLE)
-    const themeBtn = document.createElement('button');
-    themeBtn.className = 'theme-toggle-btn';
-    themeBtn.innerHTML = '🌙';
-    themeBtn.setAttribute('title', 'Đổi giao diện Sáng/Tối');
-    document.body.appendChild(themeBtn);
-
-    if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-        themeBtn.innerHTML = '☀️';
-    }
-
-    themeBtn.addEventListener('click', function() {
-        document.body.classList.toggle('light-mode');
-        if (document.body.classList.contains('light-mode')) {
-            themeBtn.innerHTML = '☀️';
-            localStorage.setItem('theme', 'light');
-        } else {
-            themeBtn.innerHTML = '🌙';
-            localStorage.setItem('theme', 'dark');
-        }
-    });
-
-    // 6. HIỆU ỨNG NHẢY SỐ TỰ ĐỘNG (STATS COUNTER)
+    // 5. HIỆU ỨNG NHẢY SỐ TỰ ĐỘNG (STATS COUNTER)
     let hasAnimatedStats = false;
 
     function animateStats() {
