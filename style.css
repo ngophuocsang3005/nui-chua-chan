@@ -419,53 +419,26 @@ footer .copyright {
 }
 
 @media (max-width: 600px) {
-    .hero {
-        min-height: 100dvh;
-        padding: 30px 20px;
-    }
-
-    .logos {
-        top: 18px;
-    }
-
-    .hero-content {
-        padding-top: 60px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .station-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .station:last-child {
-        grid-column: auto;
-    }
-}
-/* Bổ sung vào trong đoạn @media (max-width: 600px) ở cuối file style.css */
-@media (max-width: 600px) {
     
-    /* Fix hình nền section Trạm trên điện thoại không bị phóng to đùng */
+    /* Fix hình nền Mobile: Phủ kín 100% nhưng căn tâm điểm nét nhất vào giữa */
     .stations {
-        background-attachment: scroll;
-        background-size: 100% auto; /* Giữ nguyên tỉ lệ ảnh */
-        background-position: center top; /* Căn ảnh từ trên xuống */
-        padding: 50px 15px 80px;
+        background-size: cover;
+        background-position: center 30%; /* Căn ảnh dịch lên một chút để gom đúng nhân vật vào khung nhìn */
+        padding: 60px 15px 90px;
     }
 
-    /* Thu nhỏ khoảng cách giữa các ô cho gọn gàng */
     .station-grid {
-        gap: 12px;
+        gap: 14px;
     }
 
     .station {
-        min-height: 160px;
+        min-height: 170px;
         padding: 20px;
+        /* Hạ độ mờ đục của ô card trên mobile để thấy hình nền rõ hơn nữa */
+        background: rgba(15, 15, 15, 0.45); 
     }
 
     .station h3 {
-        font-size: 22px; /* Thu nhỏ chữ tiêu đề trạm vừa màn hình phone */
+        font-size: 22px;
     }
 }
