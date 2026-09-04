@@ -28,7 +28,6 @@ body {
 
 .hero {
     position: relative;
-    /* Dùng 100dvh để chuẩn khít màn hình điện thoại, không bị lòi đỏ phía dưới */
     min-height: 100dvh;
     display: flex;
     align-items: center;
@@ -122,6 +121,46 @@ body {
 
 
 /* =========================
+   BẢNG THỐNG KÊ (STATS SECTION)
+========================= */
+
+.stats-section {
+    background: #151816;
+    padding: 60px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.stats-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-card h3 {
+    font-size: 48px;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.stat-label {
+    color: #888888;
+    font-size: 14px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
    GENERAL SECTION
 ========================= */
 
@@ -149,69 +188,6 @@ body {
     max-width: 700px;
     font-size: 19px;
     color: #555;
-}
-
-
-/* =========================
-   DARK SECTION
-========================= */
-
-.section-dark {
-    max-width: none;
-    padding-left: max(30px, calc((100% - 950px) / 2));
-    padding-right: max(30px, calc((100% - 950px) / 2));
-    background: #202522;
-    color: white;
-}
-
-.section-dark .section-text {
-    color: #ccc;
-}
-
-
-/* =========================
-   VIDEO
-========================= */
-
-.video-section {
-    max-width: 1100px;
-}
-
-.video-box {
-    margin-top: 40px;
-    width: 100%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    background: #ddd;
-    color: #777;
-    font-size: 14px;
-    letter-spacing: 2px;
-}
-
-
-/* =========================
-   INTRO
-========================= */
-
-.intro {
-    max-width: 850px;
-    margin: auto;
-    padding: 120px 30px 90px;
-}
-
-.intro h2 {
-    font-size: clamp(40px, 6vw, 70px);
-    line-height: 1.1;
-    margin-bottom: 25px;
-}
-
-.intro p:last-child {
-    max-width: 650px;
-    font-size: 19px;
-    color: #666;
 }
 
 
@@ -246,9 +222,6 @@ body {
 .stations-heading > p:last-child {
     color: #aaa;
 }
-
-
-/* 5 Ô TRẠM */
 
 .station-grid {
     max-width: 1100px;
@@ -343,27 +316,128 @@ body {
 
 
 /* =========================
-   FOOTER
+   FOOTER & SIGNATURE
 ========================= */
 
 footer {
-    padding: 35px 20px;
+    padding: 40px 20px;
     text-align: center;
     background: #080808;
     color: white;
 }
 
-footer span {
-    display: block;
-    margin-top: 5px;
-    color: #777;
+footer > p:first-child {
     font-size: 13px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.coder-credit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0 10px;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.coder-credit:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.coder-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+.coder-credit span {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: #ddd;
+}
+
+.coder-credit strong {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+footer .copyright {
+    display: block;
+    color: #666;
+    font-size: 11px;
+}
+
+
+/* =========================
+   HIỆU ỨNG CHUNG
+========================= */
+
+.reading-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4caf50, #81c784);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+}
+
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #111111;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
 /* =========================
    MOBILE RESPONSIVE
 ========================= */
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
 
 @media (max-width: 600px) {
     .hero {
@@ -407,28 +481,6 @@ footer span {
     .button {
         padding: 13px 20px;
         font-size: 14px;
-    }
-
-    .section {
-        padding: 80px 25px;
-    }
-
-    .video-box {
-        height: 280px;
-    }
-
-    .intro {
-        padding: 80px 22px;
-    }
-
-    .intro h2 {
-        font-size: 38px;
-        line-height: 1.05;
-    }
-
-    .intro p {
-        font-size: 16px;
-        line-height: 1.7;
     }
 
     .stations {

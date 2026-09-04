@@ -3,185 +3,131 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Núi Chứa Chan | THPT Xuân Hưng</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
     <!-- HERO -->
-
     <header class="hero">
 
         <!-- LOGOS -->
-
         <div class="logos">
-
-            <img
-                src="images/logod.png"
-                alt="Logo Đoàn"
-                class="logo"
-            >
-
-            <img
-                src="images/logot.png"
-                alt="Logo THPT Xuân Hưng"
-                class="logo"
-            >
-
+            <img src="images/logod.png" alt="Logo Đoàn" class="logo">
+            <img src="images/logot.png" alt="Logo THPT Xuân Hưng" class="logo">
         </div>
 
-
         <!-- HERO CONTENT -->
-
         <div class="hero-content">
-
-            <p class="subtitle">
-                TRƯỜNG THPT XUÂN HƯNG
-            </p>
-
-            <h1>
-                Núi Chứa Chan 
-            </h1>
-
+            <p class="subtitle">TRƯỜNG THPT XUÂN HƯNG</p>
+            <h1>Núi Chứa Chan</h1>
+            
             <p class="description">
-                Hành trình khám phá thiên nhiên,
-                văn hóa và vẻ đẹp của vùng đất Đồng Nai.
+                Hành trình khám phá thiên nhiên, văn hóa và vẻ đẹp của vùng đất Đồng Nai.
             </p>
 
-            <a
-                href="#stations"
-                class="button"
-            >
+            <a href="#stations" class="button">
                 Bắt đầu khám phá ↓
             </a>
-
         </div>
 
     </header>
 
 
-
     <!-- MAIN CONTENT -->
-
     <main>
 
-    <!-- GIỚI THIỆU NGẮN -->
+        <!-- STATS COUNTER SECTION -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="837">0</h3>
+                    <p class="stat-label">m • Độ cao đỉnh núi</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="2" data-suffix="nd">0</h3>
+                    <p class="stat-label">Ngọn núi cao nhất Đồng Nai</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number" data-target="5">0</h3>
+                    <p class="stat-label">Trạm khám phá độc đáo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5 TRẠM -->
+        <section id="stations" class="stations">
+
+            <div class="stations-heading">
+                <p class="section-label">HÀNH TRÌNH</p>
+                <h2>5 trạm khám phá</h2>
+                <p>Chọn một trạm để bắt đầu khám phá.</p>
+            </div>
+
+            <div class="station-grid">
+
+                <a href="tram1.html" class="station">
+                    <span class="station-number">01</span>
+                    <h3>Khám phá Núi Chứa Chan</h3>
+                    <span class="station-arrow">→</span>
+                </a>
+
+                <a href="tram2.html" class="station">
+                    <span class="station-number">02</span>
+                    <h3>Giải mã địa hình</h3>
+                    <span class="station-arrow">→</span>
+                </a>
+
+                <a href="tram3.html" class="station">
+                    <span class="station-number">03</span>
+                    <h3>Núi và hệ sinh thái</h3>
+                    <span class="station-arrow">→</span>
+                </a>
+
+                <a href="#" class="station">
+                    <span class="station-number">04</span>
+                    <h3>Hậu trường chế tạo</h3>
+                    <span class="station-arrow">→</span>
+                </a>
+
+                <a href="tram5.html" class="station">
+                    <span class="station-number">05</span>
+                    <h3>Núi Chứa Chan trong tương lai</h3>
+                    <span class="station-arrow">→</span>
+                </a>
+
+            </div>
+
+        </section>
 
 
+        <!-- QUIZ -->
+        <section class="quiz">
+            <p class="section-label">THỬ THÁCH</p>
+            <h2>Bạn đã sẵn sàng?</h2>
+            <p>Hoàn thành hành trình và thử sức với Quiz về Núi Chứa Chan.</p>
+            <a href="#" class="quiz-button">Tham gia Quiz →</a>
+        </section>
 
-    <!-- 5 TRẠM -->
-
-    <section id="stations" class="stations">
-
-        <div class="stations-heading">
-
-            <p class="section-label">
-                HÀNH TRÌNH
-            </p>
-
-            <h2>
-                5 trạm khám phá
-            </h2>
-
-            <p>
-                Chọn một trạm để bắt đầu khám phá.
-            </p>
-
-        </div>
-
-
-        <div class="station-grid">
-
-            <a href="tram1.html" class="station">
-                <span class="station-number">01</span>
-                <h3>Khám phá Núi Chứa Chan</h3>
-                <span class="station-arrow">→</span>
-            </a>
-
-
-            <a href="tram2.html" class="station">
-                <span class="station-number">02</span>
-                <h3>Giải mã địa hình</h3>
-                <span class="station-arrow">→</span>
-            </a>
-
-
-            <a href="tram3.html" class="station">
-                <span class="station-number">03</span>
-                <h3>Núi và hệ sinh thái</h3>
-                <span class="station-arrow">→</span>
-            </a>
-
-
-            <a href="#" class="station">
-                <span class="station-number">04</span>
-                <h3>Hậu trường chế tạo</h3>
-                <span class="station-arrow">→</span>
-            </a>
-
-
-            <a href="tram5.html" class="station">
-                <span class="station-number">05</span>
-                <h3>Núi Chứa Chan trong tương lai</h3>
-                <span class="station-arrow">→</span>
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- QUIZ -->
-
-    <section class="quiz">
-
-        <p class="section-label">
-            THỬ THÁCH
-        </p>
-
-        <h2>
-            Bạn đã sẵn sàng?
-        </h2>
-
-        <p>
-            Hoàn thành hành trình và 
-        thử sức với Quiz về Núi Chứa Chan.  
-        </p>
-
-        <a href="#" class="quiz-button">
-            Tham gia Quiz →
-        </a>
-
-    </section>
-
-</main>
+    </main>
 
 
     <!-- FOOTER -->
-
     <footer>
+        <p>TRƯỜNG THPT XUÂN HƯNG</p>
+        
+        <div class="coder-credit">
+            <img src="avatar.jpg" alt="Coder Avatar" class="coder-avatar">
+            <span>Designed & Coded by <strong>SangA6</strong></span>
+        </div>
 
-        <p>
-            TRƯỜNG THPT XUÂN HƯNG
-        </p>
-
-        <span>
-            Khám phá Núi Chứa Chan • 2026
-        </span>
-
+        <span class="copyright">Khám phá Núi Chứa Chan • 2026</span>
     </footer>
 
-
-
+    <!-- FILE SCRIPT PHẢI ĐẶT Ở ĐÂY -->
     <script src="script.js"></script>
 
 </body>
-
 </html>
