@@ -444,3 +444,28 @@ footer .copyright {
         grid-column: auto;
     }
 }
+/* Bổ sung vào trong đoạn @media (max-width: 600px) ở cuối file style.css */
+@media (max-width: 600px) {
+    
+    /* Fix hình nền section Trạm trên điện thoại không bị phóng to đùng */
+    .stations {
+        background-attachment: scroll;
+        background-size: 100% auto; /* Giữ nguyên tỉ lệ ảnh */
+        background-position: center top; /* Căn ảnh từ trên xuống */
+        padding: 50px 15px 80px;
+    }
+
+    /* Thu nhỏ khoảng cách giữa các ô cho gọn gàng */
+    .station-grid {
+        gap: 12px;
+    }
+
+    .station {
+        min-height: 160px;
+        padding: 20px;
+    }
+
+    .station h3 {
+        font-size: 22px; /* Thu nhỏ chữ tiêu đề trạm vừa màn hình phone */
+    }
+}
