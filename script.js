@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 3. NÚT BACK TO TOP (CUỘN LÊN ĐẦU TRANG)
+    // 3. NÚT BACK TO TOP
     const backToTopBtn = document.createElement('button');
     backToTopBtn.className = 'back-to-top-btn';
     backToTopBtn.innerHTML = '↑';
@@ -45,19 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 4. HIỆU ỨNG TRỒI LÊN KHI CUỘN (SCROLL REVEAL)
-    const observerOptions = {
-        threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver(function(entries, observer) {
+    const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.15 });
 
-    // Tự động gán hiệu ứng cho các section, ô Trạm và ô Thống kê
     const revealElements = document.querySelectorAll('.station, .section, .quiz, .stations-heading, .stat-card');
     revealElements.forEach(el => {
         el.classList.add('reveal-on-scroll');
@@ -100,4 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         statsObserver.observe(statsSection);
     }
+
+    // 6. PARALLAX EFFECT FOR HERO
+    window.addEventListener('scroll', () => {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            let scrollPos = window.scrollY;
+            hero.style.backgroundPositionY = (scrollPos * 0.35) + 'px';
+        }
+    });
 });

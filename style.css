@@ -1,5 +1,5 @@
 /* =========================
-   RESET
+   RESET & GENERAL
 ========================= */
 
 * {
@@ -21,9 +21,8 @@ body {
     overflow-x: hidden;
 }
 
-
 /* =========================
-   HERO
+   HERO & ANIMATIONS
 ========================= */
 
 .hero {
@@ -45,10 +44,34 @@ body {
     background-repeat: no-repeat;
 }
 
+.hero-content {
+    max-width: 850px;
+    padding: 40px 25px;
+}
 
-/* =========================
-   LOGOS
-========================= */
+.hero-content h1, 
+.hero-content .subtitle, 
+.hero-content .description, 
+.hero-content .button {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.hero-content .subtitle { animation-delay: 0.2s; }
+.hero-content h1 { animation-delay: 0.4s; }
+.hero-content .description { animation-delay: 0.6s; }
+.hero-content .button { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .logos {
     position: absolute;
@@ -69,16 +92,6 @@ body {
     flex-shrink: 0;
 }
 
-
-/* =========================
-   HERO CONTENT
-========================= */
-
-.hero-content {
-    max-width: 850px;
-    padding: 40px 25px;
-}
-
 .subtitle {
     font-size: 14px;
     letter-spacing: 5px;
@@ -97,11 +110,6 @@ body {
     font-size: 20px;
 }
 
-
-/* =========================
-   BUTTON
-========================= */
-
 .button {
     display: inline-block;
     padding: 14px 30px;
@@ -119,9 +127,8 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-
 /* =========================
-   BẢNG THỐNG KÊ (STATS SECTION)
+   BẢNG THỐNG KÊ (STATS)
 ========================= */
 
 .stats-section {
@@ -144,6 +151,11 @@ body {
     padding: 30px 20px;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
 }
 
 .stat-card h3 {
@@ -159,52 +171,21 @@ body {
     letter-spacing: 1px;
 }
 
-
 /* =========================
-   GENERAL SECTION
-========================= */
-
-.section {
-    max-width: 950px;
-    margin: auto;
-    padding: 120px 30px;
-}
-
-.section-label {
-    font-size: 13px;
-    letter-spacing: 4px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    opacity: 0.6;
-}
-
-.section h2 {
-    font-size: clamp(35px, 5vw, 60px);
-    line-height: 1.1;
-    margin-bottom: 25px;
-}
-
-.section-text {
-    max-width: 700px;
-    font-size: 19px;
-    color: #555;
-}
-
-
-/* =========================
-   STATIONS
+   STATIONS (BỎ LÀM MỜ - HIỆN ẢNH ITACHI NÉT CĂNG)
 ========================= */
 
 .stations {
     padding: 80px 30px 120px;
     background-image:
         linear-gradient(
-            rgba(20, 25, 20, 0.72),
-            rgba(20, 25, 20, 0.82)
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.5)
         ),
-        url("https://wallpaperaccess.com/full/4834078.jpg");
+        url("https://wallpaperaccess.com/full/4834078.jpg"); /* Thay đường dẫn ảnh Itachi gốc nét của m vào đây */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     color: white;
 }
 
@@ -220,7 +201,7 @@ body {
 }
 
 .stations-heading > p:last-child {
-    color: #aaa;
+    color: #ddd;
 }
 
 .station-grid {
@@ -240,9 +221,12 @@ body {
     justify-content: space-between;
     color: white;
     text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 18px;
-    transition: 0.3s;
+    
+    /* BỎ LÀM MỜ (BLUR) ĐỂ ẢNH PHÍA SAU NÉT */
+    background: rgba(15, 15, 15, 0.55); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
 }
 
 .station:last-child {
@@ -250,19 +234,21 @@ body {
 }
 
 .station:hover {
-    background: rgba(255,255,255,0.08);
-    transform: translateY(-6px);
-    border-color: rgba(255,255,255,0.4);
+    transform: translateY(-5px);
+    background: rgba(15, 15, 15, 0.75);
+    border-color: rgba(76, 175, 80, 0.8);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 .station-number {
     font-size: 14px;
     letter-spacing: 3px;
-    color: #aaa;
+    color: #ccc;
 }
 
 .station h3 {
-    font-size: 35px;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .station-arrow {
@@ -275,11 +261,11 @@ body {
 
 .station:hover .station-arrow {
     transform: translateX(8px);
+    color: #4caf50;
 }
 
-
 /* =========================
-   QUIZ
+   QUIZ & FOOTER
 ========================= */
 
 .quiz {
@@ -313,11 +299,6 @@ body {
 .quiz-button:hover {
     transform: scale(1.05);
 }
-
-
-/* =========================
-   FOOTER & SIGNATURE
-========================= */
 
 footer {
     padding: 40px 20px;
@@ -373,9 +354,8 @@ footer .copyright {
     font-size: 11px;
 }
 
-
 /* =========================
-   HIỆU ỨNG CHUNG
+   SCROLLBAR & REVEAL
 ========================= */
 
 .reading-progress-bar {
@@ -418,7 +398,7 @@ footer .copyright {
 
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -427,9 +407,8 @@ footer .copyright {
     transform: translateY(0);
 }
 
-
 /* =========================
-   MOBILE RESPONSIVE
+   RESPONSIVE
 ========================= */
 
 @media (max-width: 768px) {
@@ -447,74 +426,21 @@ footer .copyright {
 
     .logos {
         top: 18px;
-        left: 50%;
-        transform: translateX(-50%);
-        gap: 12px;
-        width: max-content;
-    }
-
-    .logo {
-        width: 45px;
-        height: 45px;
-        object-fit: contain;
     }
 
     .hero-content {
         padding-top: 60px;
     }
 
-    .subtitle {
-        font-size: 11px;
-        letter-spacing: 3px;
-    }
-
     .hero h1 {
         font-size: 48px;
-        line-height: 0.95;
-    }
-
-    .description {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .button {
-        padding: 13px 20px;
-        font-size: 14px;
-    }
-
-    .stations {
-        padding: 70px 20px 90px;
-    }
-
-    .stations h2 {
-        font-size: 38px;
     }
 
     .station-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
     }
 
     .station:last-child {
         grid-column: auto;
-    }
-
-    .station {
-        min-height: 150px;
-        padding: 25px 22px;
-    }
-
-    .station-number {
-        font-size: 13px;
-    }
-
-    .station h3 {
-        font-size: 21px;
-        line-height: 1.2;
-    }
-
-    section {
-        overflow: hidden;
     }
 }
