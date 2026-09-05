@@ -150,14 +150,16 @@ document.addEventListener("DOMContentLoaded", function () {
         statsObserver.observe(statsSection);
     }
 });
-
-// GẮN LINK CHO TRANG BÍ MẬT Ở FOOTER TRANG CHỦ
+// HỖ TRỢ BẤM LINK ẨN TRÊN CẢ ĐIỆN THOẠI VÀ MÁY TÍNH
 document.addEventListener("DOMContentLoaded", function () {
     const creditBox = document.querySelector(".coder-credit");
     if (creditBox) {
-        creditBox.style.cursor = "pointer";
-        creditBox.addEventListener("click", function () {
+        const goToSecretPage = function (e) {
+            e.preventDefault();
             window.location.href = "bimat.html";
-        });
+        };
+
+        // Nhận cả lệnh click (PC) lẫn touch (Điện thoại)
+        creditBox.addEventListener("click", goToSecretPage);
     }
 });
