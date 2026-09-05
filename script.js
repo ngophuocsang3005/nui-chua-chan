@@ -105,3 +105,59 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+/* =========================================
+   BỔ SUNG: HIỆU ỨNG ĐẾM SỐ CHO BẢNG THỐNG KÊ
+========================================= */
+document.addEventListener("DOMContentLoaded", function () {
+    const statNumbers = document.querySelectorAll(".stat-number");
+    if (!statNumbers.length) return;
+
+    const startCounter = (el) => {
+        const target = parseInt(el.getAttribute("data-target"), 10);
+        if (isNaN(target)) return;
+        
+        const suffix = el.getAttribute("data-suffix") || "";
+        let count = 0;
+        const duration = 1500;
+        const stepTime = 20;
+        const totalSteps = duration / stepTime;
+        const increment = target / totalSteps;
+
+        const timer = setInterval(() => {
+            count += increment;
+            if (count >= target) {
+                el.innerText = target + suffix;
+                clearInterval(timer);
+            } else {
+                el.innerText = Math.floor(count) + suffix;
+            }
+        }, stepTime);
+    };
+
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const numbers = entry.target.querySelectorAll(".stat-number");
+                numbers.forEach((num) => startCounter(num));
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    const statsSection = document.querySelector(".stats-section");
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+});
+
+// GẮN LINK CHO TRANG BÍ MẬT Ở FOOTER TRANG CHỦ
+document.addEventListener("DOMContentLoaded", function () {
+    const creditBox = document.querySelector(".coder-credit");
+    if (creditBox) {
+        creditBox.style.cursor = "pointer";
+        creditBox.addEventListener("click", function () {
+            window.location.href = "bimat.html";
+        });
+    }
+});
