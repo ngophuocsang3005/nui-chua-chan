@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới thiệu coder | SangA6</title>
+    
+    <!-- Nhúng Google Fonts hỗ trợ tiếng Việt đẹp 100% không lo lỗi phông -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -13,7 +19,7 @@
         }
 
         body {
-            font-family: 'Georgia', 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background: #08080a;
             color: #f0f0f0;
             min-height: 100dvh;
@@ -68,10 +74,11 @@
         .loader-text {
             margin-top: 25px;
             color: #ff3333;
-            font-size: 13px;
+            font-size: 14px;
             letter-spacing: 4px;
             text-transform: uppercase;
             font-family: monospace;
+            font-weight: bold;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
             animation: pulseText 1s infinite alternate;
         }
@@ -152,7 +159,9 @@
             font-weight: 600;
         }
 
+        /* Dùng phông Playfair Display nghệ thuật cho câu triết lý */
         .quote {
+            font-family: 'Playfair Display', serif;
             font-size: clamp(20px, 4vw, 26px);
             font-style: italic;
             line-height: 1.6;
@@ -162,10 +171,11 @@
         }
 
         .author {
-            font-size: 16px;
-            color: #888;
-            font-weight: bold;
+            font-size: 15px;
+            color: #a0a0a0;
+            font-weight: 600;
             margin-bottom: 40px;
+            letter-spacing: 1px;
         }
 
         .author span {
@@ -186,7 +196,7 @@
             border: 1px solid rgba(255, 51, 51, 0.5);
             color: #ffffff;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 15px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
@@ -233,10 +243,10 @@
             <img src="avatar.jpg" alt="Doanh nhân SangA6" class="avatar-img">
         </div>
 
-        <p class="title">Triết Lý </p>
+        <p class="title">Triết Lý</p>
 
         <blockquote class="quote">
-            "Ngươi nói ngươi biết nhiều về ta,... Vậy người đã biết dòng code này sai ở đâu chưa ? "
+            "Ngươi nói ngươi biết nhiều về ta,... Vậy ngươi đã biết dòng code này sai ở đâu chưa ?"
         </blockquote>
 
         <p class="author">— CEO & Dev: <span>Uchiha SangA6</span> —</p>
