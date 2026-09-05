@@ -4,617 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trạm 2 – Dựng mô hình thực địa Núi Chứa Chan</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f5f0;
-            color: #2c3e50;
-            line-height: 1.8;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 25px;
-        }
-
-        .label {
-            color: #4a7c59;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        /* ================= HERO (ẢNH NỀN 2nen) ================= */
-        .hero {
-            min-height: 75vh;
-            background: linear-gradient(rgba(20, 35, 25, 0.65), rgba(20, 35, 25, 0.85)),
-                        url("2nen.JPG") center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 60px 20px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .logo-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .logo-header img {
-            height: 65px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .hero .station {
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            color: #c2eabd;
-        }
-
-        .hero h1 {
-            font-size: clamp(34px, 5.5vw, 60px);
-            line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: #e0e0e0;
-            max-width: 680px;
-            margin: 0 auto;
-        }
-
-        /* ================= SECTION GENERAL ================= */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: clamp(26px, 3.8vw, 38px);
-            line-height: 1.25;
-            margin-bottom: 20px;
-            color: #1a3021;
-        }
-
-        .section-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 45px;
-            align-items: center;
-        }
-
-        .text-block p {
-            font-size: 16px;
-            color: #444;
-            margin-bottom: 16px;
-        }
-
-        /* TỐI ƯU HIỂN THỊ ẢNH CHUNG */
-        .image-block {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .image-block img {
-            width: 100%;
-            max-height: 400px;
-            object-fit: contain;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-        }
-
-        /* ================= BƯỚC 1: TỶ LỆ & CHUẨN BỊ ================= */
-        .section-step1 {
-            background: #ffffff;
-        }
-
-        /* ================= BƯỚC 2: DỰNG NỀN & CẤU TRÚC ================= */
-        .section-step2 {
-            background: #f8f9f5;
-            border-top: 1px solid #e2e5dc;
-        }
-
-        /* ================= BƯỚC 3: TẠO ĐỊA HÌNH & SƯỜN NÚI ================= */
-        .section-step3 {
-            background: #ffffff;
-        }
-
-        .section-header-center {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-        }
-
-        .media-grid-two {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 35px;
-        }
-
-        .media-grid-two img {
-            width: 100%;
-            max-height: 380px;
-            object-fit: contain;
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 6px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-        }
-
-        .step-cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .card {
-            background: #f8f9f5;
-            padding: 20px;
-            border-radius: 8px;
-            border-top: 4px solid #4a7c59;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-
-        .card h3 {
-            font-size: 17px;
-            margin-bottom: 8px;
-            color: #2c3e50;
-        }
-
-        .card p {
-            font-size: 13.5px;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        /* ================= BƯỚC 4 & 5: ĐIỂM CHÍNH & HOÀN THIỆN ================= */
-        .section-step4-5 {
-            background: #1e3323;
-            color: #ffffff;
-        }
-
-        .section-step4-5 .label {
-            color: #a3d9a5;
-        }
-
-        .section-step4-5 .section-title {
-            color: #ffffff;
-        }
-
-        .action-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-top: 22px;
-        }
-
-        .action-item {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 16px;
-            border-radius: 8px;
-        }
-
-        .action-item h4 {
-            font-size: 15px;
-            color: #c2eabd;
-            margin-bottom: 4px;
-        }
-
-        .action-item p {
-            font-size: 13px;
-            color: #d0d7d1;
-        }
-
-        .quote-msg {
-            margin-top: 25px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #a3d9a5;
-            font-style: italic;
-        }
-
-        /* ================= MÔ HÌNH 3D & TƯƠNG TÁC ================= */
-        .interactive-3d {
-            background: #111111;
-            color: white;
-            padding: 75px 0;
-        }
-
-        .interactive-box {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .interactive-3d .label {
-            color: #aebda9;
-        }
-
-        .interactive-3d h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .interactive-intro {
-            color: #aaa;
-            margin-bottom: 30px;
-            font-size: 15px;
-        }
-
-        .model-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-            background: #1a1a1a;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #333;
-        }
-
-        .model-img img {
-            width: 100%;
-            max-height: 350px;
-            object-fit: contain;
-            border-radius: 8px;
-        }
-
-        .model-info h3 {
-            font-size: 20px;
-            color: #c2eabd;
-            margin-bottom: 10px;
-        }
-
-        .model-info p {
-            font-size: 14.5px;
-            color: #ccc;
-            margin-bottom: 22px;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn-3d {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 11px 22px;
-            border-radius: 25px;
-            background: #ffffff;
-            color: #111;
-            font-size: 13.5px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .btn-3d:hover {
-            background: #e0e0e0;
-        }
-
-        .feedback-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 11px 22px;
-            border: 1px solid #4a7c59;
-            border-radius: 25px;
-            background: rgba(74, 124, 89, 0.2);
-            color: #a3d9a5;
-            font-size: 13.5px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .feedback-button:hover {
-            background: #4a7c59;
-            color: #ffffff;
-        }
-
-        /* ================= FOOTER ================= */
-        footer {
-            background: #080808;
-            color: white;
-            text-align: center;
-            padding: 45px 20px;
-        }
-
-        footer p {
-            color: #777;
-            margin-top: 6px;
-            font-size: 14px;
-        }
-
-        .home-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 24px;
-            border-radius: 25px;
-            background: #ffffff;
-            color: #111;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13.5px;
-        }
-
-        /* ================= RESPONSIVE ĐIỆN THOẠI & TABLET ================= */
-        @media (max-width: 850px) {
-            .section {
-                padding: 50px 0;
-            }
-
-            .section-grid,
-            .model-container {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .media-grid-two {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .step-cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            /* GIẢM DUNG LƯỢNG KÍCH THƯỚC ẢNH TRÊN MOBILE */
-            .image-block img,
-            .media-grid-two img,
-            .model-img img {
-                max-height: 280px;
-            }
-        }
-
-        @media (max-width: 550px) {
-            .container {
-                padding: 0 16px;
-            }
-
-            /* TỐI ƯU HERO CHO MOBILE - GIỮ NGUYÊN ẢNH NỀN TỪ LỚP CHÍNH */
-            .hero {
-                min-height: 45vh;
-                padding: 35px 15px;
-                background-attachment: scroll !important;
-                background-position: center center !important;
-                background-size: cover !important;
-            }
-
-            .hero h1 {
-                font-size: 25px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .step-cards,
-            .action-list {
-                grid-template-columns: 1fr;
-            }
-
-            .logo-header img {
-                height: 45px;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-            }
-
-            .btn-3d, .feedback-button {
-                width: 100%;
-                text-align: center;
-            }
-
-            .image-block img,
-            .media-grid-two img,
-            .model-img img {
-                max-height: 230px;
-            }
-        }
-    </style>
+    <!-- Liên kết tới file CSS riêng -->
+    <link rel="stylesheet" href="tram2.css">
 </head>
-
 <body>
 
-    <!-- ================= BANNER HERO ================= -->
-    <section class="hero">
-        <div class="hero-content">
+    <!-- HERO HEADER -->
+    <header class="station-hero">
+        <a href="index.html" class="back-home-btn">← Trang chủ</a>
+        <div>
             <div class="logo-header">
                 <img src="logod.png" alt="Logo Đoàn">
                 <img src="logot.png" alt="Logo Trường">
             </div>
-
-            <div class="station">TRẠM 02 · MÔ HÌNH THỰC ĐỊA</div>
+            <span class="station-badge">TRẠM 02 · MÔ HÌNH THỰC ĐỊA</span>
             <h1>Hướng dẫn dựng mô hình Núi Chứa Chan (837m)</h1>
-            <p>Quy trình tái hiện địa hình Núi Chứa Chan chính xác theo tỷ lệ bằng các nguyên liệu thân thiện với môi trường.</p>
+            <p class="description">Quy trình tái hiện địa hình Núi Chứa Chan chính xác theo tỷ lệ bằng các nguyên liệu thân thiện với môi trường.</p>
         </div>
-    </section>
+    </header>
 
+    <main class="station-main">
 
-    <!-- ================= BƯỚC 1: TỶ LỆ & CHUẨN BỊ ================= -->
-    <section class="section section-step1">
-        <div class="container">
-            <div class="section-grid">
-                <div class="text-block">
-                    <div class="label">BƯỚC 1</div>
-                    <h2 class="section-title">Đo tỷ lệ & Chuẩn bị nguyên liệu</h2>
-                    <p><strong>Dữ liệu thực địa:</strong> Sử dụng dữ liệu GPX thực tế với độ cao Núi Chứa Chan là 837m, tọa độ địa lý 10°56'N - 107°22'E.</p>
-                    <p><strong>Tỷ lệ mô hình:</strong> Tỷ lệ chuẩn 1:10,000 (1cm trên mô hình tương đương 1km ngoài thực tế).</p>
-                    <p><strong>Bảng nguyên liệu:</strong> Bìa carton, giấy báo, keo sữa, thạch cao, sơn màu và cây mô hình trang trí.</p>
-                </div>
-                <div class="image-block">
-                    <img src="2anh1.JPG" alt="Bước 1: Đo tỷ lệ và chuẩn bị nguyên liệu">
-                </div>
+        <!-- BƯỚC 1: TỶ LỆ & CHUẨN BỊ -->
+        <section class="content-block">
+            <div class="block-text">
+                <div class="section-label">BƯỚC 1</div>
+                <h2>Đo tỷ lệ & Chuẩn bị nguyên liệu</h2>
+                <p><strong>Dữ liệu thực địa:</strong> Sử dụng dữ liệu GPX thực tế với độ cao Núi Chứa Chan là 837m, tọa độ địa lý 10°56'N - 107°22'E.</p>
+                <p><strong>Tỷ lệ mô hình:</strong> Tỷ lệ chuẩn 1:10,000 (1cm trên mô hình tương đương 1km ngoài thực tế).</p>
+                <p><strong>Bảng nguyên liệu:</strong> Bìa carton, giấy báo, keo sữa, thạch cao, sơn màu và cây mô hình trang trí.</p>
             </div>
-        </div>
-    </section>
-
-
-    <!-- ================= BƯỚC 2: DỰNG NỀN VÀ CẤU TRÚC ================= -->
-    <section class="section section-step2">
-        <div class="container">
-            <div class="section-grid">
-                <div class="image-block">
-                    <img src="2anh2.JPG" alt="Bước 2: Dựng nền và cấu trúc">
-                </div>
-                <div class="text-block">
-                    <div class="label">BƯỚC 2</div>
-                    <h2 class="section-title">Dựng nền & Cấu trúc đồng mức</h2>
-                    <p><strong>Cắt bìa carton:</strong> Bìa carton được cắt định hình theo các lớp đường đồng mức (khoảng cách độ cao từ 50m - 100m - 200m).</p>
-                    <p><strong>Xếp tầng chồng lớp:</strong> Dán chồng các lớp bìa carton theo thứ tự từ chân núi lên đỉnh núi để tạo phần khung định hình 3D ban đầu.</p>
-                    <p><strong>Tạo nền vững chắc:</strong> Cố định lớp chân đế carton giúp mô hình không bị cong vênh trong quá trình đắp thạch cao sau này.</p>
-                </div>
+            <div class="img-wrapper">
+                <img src="2anh1.JPG" alt="Bước 1: Đo tỷ lệ và chuẩn bị nguyên liệu" class="station-img">
+                <div class="img-badge">Bước 1: Chuẩn bị nguyên liệu</div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- BƯỚC 2: DỰNG NỀN & CẤU TRÚC -->
+        <section class="content-block">
+            <div class="img-wrapper">
+                <img src="2anh2.JPG" alt="Bước 2: Dựng nền và cấu trúc" class="station-img">
+                <div class="img-badge">Bước 2: Dựng nền & Đồng mức</div>
+            </div>
+            <div class="block-text">
+                <div class="section-label">BƯỚC 2</div>
+                <h2>Dựng nền & Cấu trúc đồng mức</h2>
+                <p><strong>Cắt bìa carton:</strong> Bìa carton được cắt định hình theo các lớp đường đồng mức (khoảng cách độ cao từ 50m - 100m - 200m).</p>
+                <p><strong>Xếp tầng chồng lớp:</strong> Dán chồng các lớp bìa carton theo thứ tự từ chân núi lên đỉnh núi để tạo phần khung định hình 3D ban đầu.</p>
+                <p><strong>Tạo nền vững chắc:</strong> Cố định lớp chân đế carton giúp mô hình không bị cong vênh trong quá trình đắp thạch cao sau này.</p>
+            </div>
+        </section>
 
-    <!-- ================= BƯỚC 3: TẠO ĐỊA HÌNH VÀ SƯỜN NÚI ================= -->
-    <section class="section section-step3">
-        <div class="container">
-            <div class="section-header-center">
-                <div class="label">BƯỚC 3</div>
-                <h2 class="section-title">Tạo địa hình & Sườn núi</h2>
-                <p>Nhồi giấy báo lấp đầy khoảng hẫng, phủ thạch cao làm mịn bề mặt và uốn nắn độ dốc sườn núi từ 20° đến 35°.</p>
+        <!-- BƯỚC 3: TẠO ĐỊA HÌNH VÀ SƯỜN NÚI -->
+        <section class="altitude-section">
+            <div class="text-center">
+                <div class="section-label">BƯỚC 3</div>
+                <h2>Tạo địa hình & Sườn núi</h2>
+                <p style="color: #90a4ae; max-width: 700px; margin: 0 auto 30px;">Nhồi giấy báo lấp đầy khoảng hẫng, phủ thạch cao làm mịn bề mặt và uốn nắn độ dốc sườn núi từ 20° đến 35°.</p>
             </div>
 
-            <div class="media-grid-two">
-                <img src="2anh3.JPG" alt="Bước 3: Phủ thạch cao và làm mịn">
-                <img src="2anh32.JPG" alt="Bước 3: Tạo hình độ dốc sườn núi">
-            </div>
-
-            <div class="step-cards">
-                <div class="card">
-                    <h3>Phủ thạch cao</h3>
-                    <p>Đắp kín lớp khung carton để xóa khoảng hẫng giữa các đường đồng mức.</p>
+            <div class="content-block style-step3">
+                <div class="img-wrapper">
+                    <img src="2anh3.JPG" alt="Bước 3: Phủ thạch cao và làm mịn" class="station-img">
                 </div>
-                <div class="card">
-                    <h3>Làm mịn bề mặt</h3>
-                    <p>Dùng cọ mỳ/mịn miết nhẹ bề mặt tạo độ mượt tự nhiên cho sườn núi.</p>
-                </div>
-                <div class="card">
-                    <h3>Độ dốc 20° - 35°</h3>
-                    <p>Uốn nắn chính xác độ nghiêng thực tế của các vách sườn Núi Chứa Chan.</p>
-                </div>
-                <div class="card">
-                    <h3>Kết cấu đá học</h3>
-                    <p>Tạo hiệu ứng bề mặt đá tảng tự nhiên đặc trưng của địa hình núi.</p>
+                <div class="img-wrapper">
+                    <img src="2anh32.JPG" alt="Bước 3: Tạo hình độ dốc sườn núi" class="station-img">
                 </div>
             </div>
-        </div>
-    </section>
 
+            <div class="step-cards-grid">
+                <div class="geo-card">
+                    <span class="geo-num">Phủ thạch cao</span>
+                    <div class="geo-desc">Đắp kín lớp khung carton để xóa khoảng hẫng giữa các đường đồng mức.</div>
+                </div>
+                <div class="geo-card">
+                    <span class="geo-num">Làm mịn bề mặt</span>
+                    <div class="geo-desc">Dùng cọ mỳ/mịn miết nhẹ bề mặt tạo độ mượt tự nhiên cho sườn núi.</div>
+                </div>
+                <div class="geo-card">
+                    <span class="geo-num">Độ dốc 20° - 35°</span>
+                    <div class="geo-desc">Uốn nắn chính xác độ nghiêng thực tế của các vách sườn Núi Chứa Chan.</div>
+                </div>
+                <div class="geo-card">
+                    <span class="geo-num">Kết cấu đá học</span>
+                    <div class="geo-desc">Tạo hiệu ứng bề mặt đá tảng tự nhiên đặc trưng của địa hình núi.</div>
+                </div>
+            </div>
+        </section>
 
-    <!-- ================= BƯỚC 4 & 5: ĐIỂM CHÍNH & HOÀN THIỆN ================= -->
-    <section class="section section-step4-5">
-        <div class="container">
-            <div class="section-grid">
-                <div class="text-block">
-                    <div class="label">BƯỚC 4 & BƯỚC 5</div>
-                    <h2 class="section-title">Xác định danh thắng & Hoàn thiện phủ xanh</h2>
-                    <p>Đánh dấu chính xác các địa danh trọng điểm trên mô hình và tiến hành phủ thảm thực vật đặc trưng của hệ sinh thái rừng mưa.</p>
+        <!-- BƯỚC 4 & BƯỚC 5: ĐIỂM CHÍNH & HOÀN THIỆN -->
+        <section class="content-block">
+            <div class="block-text">
+                <div class="section-label">BƯỚC 4 & BƯỚC 5</div>
+                <h2>Xác định danh thắng & Hoàn thiện phủ xanh</h2>
+                <p>Đánh dấu chính xác các địa danh trọng điểm trên mô hình và tiến hành phủ thảm thực vật đặc trưng của hệ sinh thái rừng mưa.</p>
 
-                    <div class="action-list">
-                        <div class="action-item">
-                            <h4>Đỉnh núi (837m)</h4>
-                            <p>Cột mốc độ cao nhất của toàn bộ mô hình.</p>
-                        </div>
-                        <div class="action-item">
-                            <h4>Cây 3 ngọn linh thiêng</h4>
-                            <p>Mô phỏng cây di sản tâm linh nổi tiếng.</p>
-                        </div>
-                        <div class="action-item">
-                            <h4>Chùa Bửu Quang (Gia Lào)</h4>
-                            <p>Tái hiện ngôi chùa nổi tiếng gắn liền với núi.</p>
-                        </div>
-                        <div class="action-item">
-                            <h4>Trạm cáp treo & 125 cột điện</h4>
-                            <p>Điểm nhấn hạ tầng giao thông và năng lượng.</p>
-                        </div>
+                <div class="action-grid-two">
+                    <div class="action-box">
+                        <h4>Đỉnh núi (837m)</h4>
+                        <p>Cột mốc độ cao nhất của toàn bộ mô hình.</p>
                     </div>
-
-                    <div class="quote-msg">
-                        "Mô hình thực địa giúp tái hiện sinh động bức tranh địa hình Núi Chứa Chan."
+                    <div class="action-box">
+                        <h4>Cây 3 ngọn linh thiêng</h4>
+                        <p>Mô phỏng cây di sản tâm linh nổi tiếng.</p>
+                    </div>
+                    <div class="action-box">
+                        <h4>Chùa Bửu Quang (Gia Lào)</h4>
+                        <p>Tái hiện ngôi chùa nổi tiếng gắn liền với núi.</p>
+                    </div>
+                    <div class="action-box">
+                        <h4>Trạm cáp treo & 125 cột điện</h4>
+                        <p>Điểm nhấn hạ tầng giao thông và năng lượng.</p>
                     </div>
                 </div>
 
-                <div class="image-block">
-                    <img src="2anh4.JPG" alt="Bước 4: Các điểm danh thắng chính">
+                <div class="quote-msg">
+                    "Mô hình thực địa giúp tái hiện sinh động bức tranh địa hình Núi Chứa Chan."
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="img-wrapper">
+                <img src="2anh4.JPG" alt="Bước 4: Các điểm danh thắng chính" class="station-img">
+                <div class="img-badge">Hoàn thiện danh thắng</div>
+            </div>
+        </section>
 
-
-    <!-- ================= MÔ HÌNH 3D & TRẢI NGHIỆM ================= -->
-    <section class="interactive-3d">
-        <div class="container">
-            <div class="interactive-box">
-                <div class="label">TRẢI NGHIỆM TƯƠNG TÁC</div>
+        <!-- MÔ HÌNH 3D & TRẢI NGHIỆM -->
+        <section class="highlights-section">
+            <div class="text-center style-mb">
+                <div class="section-label">TRẢI NGHIỆM TƯƠNG TÁC</div>
                 <h2>Mô hình 3D Núi Chứa Chan</h2>
-                <p class="interactive-intro">Quét mã QR hoặc truy cập đường link bên dưới để xoay, thu phóng và khám phá chi tiết địa hình 3D trên thiết bị của bạn.</p>
+                <p style="color: #90a4ae;">Quét mã QR hoặc truy cập đường link bên dưới để xoay, thu phóng và khám phá chi tiết địa hình 3D trên thiết bị của bạn.</p>
+            </div>
 
-                <div class="model-container">
-                    <div class="model-img">
-                        <img src="2anh5.JPG" alt="Bước 5: Quét mã QR trải nghiệm mô hình 3D">
-                    </div>
-                    <div class="model-info">
-                        <h3>Mô hình 3D Tương tác</h3>
-                        <p>Bản sao địa hình số hóa cho phép bạn nhìn ngắm Núi Chứa Chan từ mọi góc độ, dễ dàng quan sát các thung lũng, độ dốc và thảm thực vật rừng mưa.</p>
-                        
-                        <div class="action-buttons">
-                            <a href="https://sketchfab.com/models/chua-chan-mountain-3d" target="_blank" class="btn-3d">🌐 Xem mô hình 3D →</a>
-                            <!-- THAY LINK FORM CỦA BẠN VÀO ĐÂY -->
-                            <a href="LINK_GOOGLE_FORM_CỦA_BẠN" target="_blank" class="feedback-button">📝 Đóng góp ý kiến</a>
-                        </div>
+            <div class="interactive-container">
+                <div class="img-wrapper">
+                    <img src="2anh5.JPG" alt="Bước 5: Quét mã QR trải nghiệm mô hình 3D" class="station-img">
+                </div>
+                <div>
+                    <h3>Mô hình 3D Tương tác</h3>
+                    <p class="interactive-desc">Bản sao địa hình số hóa cho phép bạn nhìn ngắm Núi Chứa Chan từ mọi góc độ, dễ dàng quan sát các thung lũng, độ dốc và thảm thực vật rừng mưa.</p>
+                    
+                    <div class="action-buttons">
+                        <a href="https://sketchfab.com/models/chua-chan-mountain-3d" target="_blank" class="btn-action btn-primary">🌐 Xem mô hình 3D →</a>
+                        <a href="LINK_GOOGLE_FORM_CỦA_BẠN" target="_blank" class="btn-action btn-secondary">📝 Đóng góp ý kiến</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+<!-- NÚT VỀ TRANG CHỦ -->
+        <nav class="station-nav single-btn">
+            <a href="index.html" class="nav-btn home">
+                <span>QUAY LẠI</span>
+                <strong>🏠 Về Trang Chủ</strong>
+            </a>
+        </nav>
 
-    <!-- ================= FOOTER ================= -->
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <h3>CHẠM VÀO NÚI CHỨA CHAN</h3>
-        <p>Trạm 2 · Dựng mô hình thực địa</p>
-        <a href="index.html" class="home-button">← Quay về trang chủ</a>
+        <div class="coder-credit">
+            <span>Dự án</span>
+            <strong>CHẠM VÀO NÚI CHỨA CHAN</strong>
+        </div>
+        <p>Trạm 2 · Dựng mô hình thực địa Núi Chứa Chan</p>
+        <span class="copyright">© 2026 CHẠM VÀO NÚI CHỨA CHAN. All rights reserved.</span>
     </footer>
 
 </body>

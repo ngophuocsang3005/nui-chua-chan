@@ -1,0 +1,548 @@
+/* =========================================
+   1. ĐỊNH DẠNG CHUNG & ANIMATIONS (HIỆU ỨNG)
+========================================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowText {
+    0%, 100% {
+        text-shadow: 0 0 15px rgba(76, 175, 80, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(76, 175, 80, 0.6);
+    }
+}
+
+body {
+    background-color: #0d110e;
+    color: #e0e6e1;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   2. HERO HEADER (HIỆU ỨNG CHỮ TRANG CHỦ)
+========================================= */
+.station-hero {
+    position: relative;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 90px 20px 60px;
+    background: linear-gradient(180deg, rgba(13, 17, 14, 0.65) 0%, rgba(13, 17, 14, 0.95) 100%),
+                url("2nen.JPG") center/cover no-repeat;
+}
+
+.back-home-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 10px 22px;
+    border-radius: 30px;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-home-btn:hover {
+    background: #4caf50;
+    border-color: #4caf50;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4);
+    transform: translateY(-2px);
+}
+
+.logo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.logo-header img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.station-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(76, 175, 80, 0.12);
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    color: #81c784;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.9s ease-out forwards;
+}
+
+/* Tiêu đề chính phát sáng & trượt mượt */
+.station-hero h1 {
+    font-size: clamp(36px, 5vw, 68px);
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #a5d6a7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 1s ease-out forwards, glowText 4s infinite ease-in-out;
+}
+
+.station-hero .description {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #b0bec5;
+    line-height: 1.7;
+    animation: fadeInUp 1.1s ease-out forwards;
+}
+
+.station-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px 90px;
+}
+
+/* =========================================
+   3. KHỐI NỘI DUNG VÀ TẠO HIỆU ỨNG TƯƠNG TÁC
+========================================= */
+.content-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.section-label {
+    color: #4caf50;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.block-text h2 {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 22px;
+    line-height: 1.25;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Rê chuột vào chữ tiêu đề đổi màu xanh dịu */
+.block-text:hover h2 {
+    color: #a5d6a7;
+    transform: translateX(5px);
+}
+
+.block-text p {
+    color: #b0bec5;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.img-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-wrapper:hover {
+    transform: translateY(-5px);
+    border-color: rgba(76, 175, 80, 0.5);
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.15);
+}
+
+.station-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+}
+
+.img-badge {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    background: rgba(13, 17, 14, 0.85);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   4. BƯỚC 3: GIỮ CÂN BẰNG 2 ẢNH & KHÔNG MÓP
+========================================= */
+.altitude-section {
+    margin: 110px 0;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 50px 35px;
+    border-radius: 28px;
+}
+
+.altitude-section h2 {
+    font-size: 34px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.content-block.style-step3 {
+    margin: 30px 0;
+}
+
+.content-block.style-step3 .img-wrapper {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content-block.style-step3 .station-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Các thẻ thông tin nhỏ */
+.step-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.geo-card {
+    background: rgba(22, 28, 24, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 28px 18px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(16px);
+    transition: all 0.3s ease;
+}
+
+.geo-card:hover {
+    border-color: rgba(76, 175, 80, 0.6);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(76, 175, 80, 0.2);
+}
+
+.geo-num {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    color: #4caf50;
+    margin-bottom: 8px;
+}
+
+.geo-desc {
+    font-size: 13px;
+    color: #90a4ae;
+    margin-top: 6px;
+}
+
+.action-grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.action-box {
+    background: rgba(76, 175, 80, 0.08);
+    border: 1px solid rgba(76, 175, 80, 0.25);
+    padding: 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.action-box:hover {
+    background: rgba(76, 175, 80, 0.15);
+    transform: translateY(-3px);
+}
+
+.action-box h4 {
+    color: #81c784;
+    font-size: 15px;
+    margin: 0 0 6px 0;
+}
+
+.action-box p {
+    color: #b0bec5;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.quote-msg {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #81c784;
+    font-style: italic;
+}
+
+/* =========================================
+   5. KHU VỰC TƯƠNG TÁC 3D & NÚT BẤM
+========================================= */
+.highlights-section {
+    margin: 110px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center.style-mb {
+    margin-bottom: 30px;
+}
+
+.highlights-section h2 {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.interactive-container {
+    background: rgba(22, 28, 24, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.interactive-container h3 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.interactive-desc {
+    color: #90a4ae;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+    background: #4caf50;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #43a047;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: rgba(76, 175, 80, 0.15);
+    color: #81c784;
+    border: 1px solid rgba(76, 175, 80, 0.4);
+}
+
+.btn-secondary:hover {
+    background: rgba(76, 175, 80, 0.3);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   6. NÚT CHUYỂN TRẠM & FOOTER
+========================================= */
+.station-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 90px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-btn {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 28px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.nav-btn.next {
+    text-align: right;
+}
+
+.nav-btn span {
+    font-size: 12px;
+    color: #78909c;
+    margin-bottom: 6px;
+}
+
+.nav-btn strong {
+    font-size: 17px;
+    color: #81c784;
+}
+
+.nav-btn:hover {
+    background: rgba(76, 175, 80, 0.12);
+    border-color: #4caf50;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #090c0a;
+}
+
+footer p {
+    color: #78909c;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.coder-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 15px;
+}
+
+.coder-credit span {
+    font-size: 13px;
+    color: #b0bec5;
+}
+
+.coder-credit strong {
+    color: #4caf50;
+}
+
+.copyright {
+    display: block;
+    font-size: 12px;
+    color: #546e7a;
+}
+
+/* =========================================
+   7. RESPONSIVE
+========================================= */
+@media (max-width: 900px) {
+    .content-block,
+    .step-cards-grid,
+    .action-grid-two,
+    .interactive-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .station-nav {
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center !important;
+    }
+}
+/* =========================================
+   SỬA LỖI MÉO ẢNH BƯỚC 3 (GIỮ ĐÚNG TỈ LỆ GỐC)
+========================================= */
+.content-block.style-step3 .img-wrapper {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content-block.style-step3 .station-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+/* =========================================
+   CĂN GIỮA NÚT VỀ TRANG CHỦ Ở CUỐI TRANG
+========================================= */
+.station-nav.single-btn {
+    justify-content: center;
+}
+
+.nav-btn.home {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}

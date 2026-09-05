@@ -443,21 +443,3 @@ footer .copyright {
     }
 }
 
-/* =========================================
-   GIẤU LINK BÍ MẬT VÀO AVATAR (KHÔNG HIỆU ỨNG)
-========================================= */
-.secret-avatar-link {
-    display: inline-block;
-    text-decoration: none;
-    cursor: default; /* Giữ con trỏ chuột bình thường, không biến thành hình bàn tay chỉ trỏ */
-    transition: none !important;
-}
-
-/* Tắt toàn bộ hiệu ứng để người ngoài nhìn vào không nghi ngờ */
-.secret-avatar-link:hover,
-.secret-avatar-link:hover .coder-avatar {
-    opacity: 1 !important;
-    transform: none !important;
-    box-shadow: none !important;
-    border-color: inherit !important;
-}
